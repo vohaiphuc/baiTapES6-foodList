@@ -25,6 +25,14 @@
         />
         <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/0.5.0/sweet-alert.min.css"> -->
         <!-- Bootstrap core CSS -->
+
+        <!-- Toast -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+        />
+        <!-- my css -->
         <link
             href="../../assets/lib/css/bootstrap/bootstrap.min.css"
             rel="stylesheet"
@@ -53,6 +61,13 @@
     </head>
 
     <body>
+        <div
+            class="loading justify-content-center align-items-center bg-white d-none"
+        >
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
         <nav
             class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"
         >
@@ -139,6 +154,7 @@
                                 class="btn btn-warning mb-3 text-white"
                                 data-toggle="modal"
                                 data-target="#exampleModal"
+                                onclick="resetForm()"
                             >
                                 Thêm Món Ăn
                             </button>
@@ -179,6 +195,31 @@
                             <tbody id="tbodyFood"></tbody>
                         </table>
                     </div>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a
+                                    class="page-link"
+                                    href="#"
+                                    aria-label="Previous"
+                                    onclick="prev()"
+                                >
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <div id="renderPages" class="d-flex mx-2"></div>
+                            <li class="page-item">
+                                <a
+                                    class="page-link"
+                                    href="#"
+                                    aria-label="Next"
+                                    onclick="next()"
+                                >
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </main>
             </div>
         </div>
@@ -380,6 +421,10 @@
             integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
+        ></script>
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/toastify-js"
         ></script>
         <script type="module" src="../controllers/v2/main.js"></script>
     </body>
